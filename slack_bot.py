@@ -7,7 +7,7 @@ Created on Sat May 25 22:42:16 2019
 import os
 import time
 from slackclient import SlackClient
-import schedule
+import datetime
 # instantiate Slack client
 slack_client = SlackClient(os.environ['TOKEN'])
 # starterbot's user ID in Slack: value is assigned after the bot starts up
@@ -24,7 +24,7 @@ def send_evening_msg():
    channel="#test",
    text="So, What did you achieved today?")
 
-
+'''
 # Task scheduling 
 # After every 10mins geeks() is called.  
 #schedule.every(1).minutes.do(send_msg) 
@@ -49,4 +49,17 @@ while True:
     # is pending to run or not 
     schedule.run_pending() 
     time.sleep(1) 
-    
+'''
+
+
+dt = datetime.datetime.now()
+
+while True:
+    dt = datetime.datetime.now()
+    if dt.hour == 18 and dt.minute == 25:
+        send_evening_msg()
+    elif dt.hour == 10 and dt.minute == 15:
+        send_morning_msg()
+    else:
+        pass
+        
