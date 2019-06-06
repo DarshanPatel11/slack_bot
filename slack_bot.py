@@ -17,12 +17,15 @@ def send_morning_msg():
     slack_client.api_call("chat.postMessage",
    channel="#test",
    text="What are you planning to accomplish today?")
+    print("Morning Msg Sent...")
 
 
 def send_evening_msg(): 
     slack_client.api_call("chat.postMessage",
    channel="#test",
    text="So, What did you achieved today?")
+    print("Evening Msg Sent...")
+
 
 '''
 # Task scheduling 
@@ -64,4 +67,4 @@ while True:
     elif dt.hour == 10 and dt.minute == 15:
         send_morning_msg()
     else:
-        pass
+        time.sleep(60)
