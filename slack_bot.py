@@ -51,9 +51,12 @@ while True:
     time.sleep(1) 
 '''
 
-
-dt = datetime.datetime.now()
-
+print('started...')
+#dt = datetime.datetime.now()
+from pytz import timezone
+now_utc = datetime.datetime.now(timezone('UTC'))    
+dt = now_utc.astimezone(timezone('Asia/Kolkata'))
+print(dt)        
 while True:
     dt = datetime.datetime.now()
     if dt.hour == 18 and dt.minute == 25:
@@ -62,4 +65,3 @@ while True:
         send_morning_msg()
     else:
         pass
-        
