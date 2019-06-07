@@ -64,6 +64,3 @@ while True:
         send_evening_msg()
     elif dt.hour == 10 and dt.minute == 15:
         send_morning_msg()
-    elif dt.hour == 16 and dt.minute == 33:
-        print("hello")
-        time.sleep(100)
