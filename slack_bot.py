@@ -14,16 +14,12 @@ slack_client = SlackClient(os.environ['TOKEN'])
 
 
 def send_morning_msg(): 
-    slack_client.api_call("chat.postMessage",
-   channel="#test",
-   text="What are you planning to accomplish today?")
+    #slack_client.api_call("chat.postMessage",channel="#test",text="What are you planning to accomplish today?")
     print("Morning Msg Sent...")
 
 
 def send_evening_msg(): 
-    slack_client.api_call("chat.postMessage",
-   channel="#test",
-   text="So, What did you achieved today?")
+    #slack_client.api_call("chat.postMessage",channel="#test",text="So, What did you achieved today?")
     print("Evening Msg Sent...")
 
 
@@ -61,10 +57,12 @@ from pytz import timezone
 while True:
     now_utc = datetime.datetime.now(timezone('UTC'))    
     dt = now_utc.astimezone(timezone('Asia/Kolkata'))
-    dt = datetime.datetime.now()
+    #dt = datetime.datetime.now()
     if dt.hour == 18 and dt.minute == 25:
         send_evening_msg()
     elif dt.hour == 10 and dt.minute == 15:
         send_morning_msg()
+    elif dt.hour == 16 and dt.minute == 30:
+        print("hello")
     else:
-        time.sleep(60)
+        time.sleep(80)
