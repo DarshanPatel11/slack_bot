@@ -57,10 +57,10 @@ while True:
 print('started...')
 #dt = datetime.datetime.now()
 from pytz import timezone
-now_utc = datetime.datetime.now(timezone('UTC'))    
-dt = now_utc.astimezone(timezone('Asia/Kolkata'))
-print(dt)        
+#print(dt)        
 while True:
+    now_utc = datetime.datetime.now(timezone('UTC'))    
+    dt = now_utc.astimezone(timezone('Asia/Kolkata'))
     dt = datetime.datetime.now()
     if dt.hour == 18 and dt.minute == 25:
         send_evening_msg()
