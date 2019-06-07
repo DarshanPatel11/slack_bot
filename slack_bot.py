@@ -14,13 +14,13 @@ slack_client = SlackClient(os.environ['TOKEN'])
 
 
 def send_morning_msg(): 
-    #slack_client.api_call("chat.postMessage",channel="#test",text="What are you planning to accomplish today?")
+    slack_client.api_call("chat.postMessage",channel="#test",text="What are you planning to accomplish today?")
     print("Morning Msg Sent...")
     time.sleep(100)
 
 
 def send_evening_msg(): 
-    #slack_client.api_call("chat.postMessage",channel="#test",text="So, What did you achieved today?")
+    slack_client.api_call("chat.postMessage",channel="#test",text="So, What did you achieved today?")
     print("Evening Msg Sent...")
     time.sleep(100)
 
